@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix-movies online</title>
+    <style>
+        body {
+            background-image: url("./images/Netflix-background.jpg");
+            background-size: cover;
+            height: 100vh;
+
+        }
+
+        .shade {
+            background-color: rgba(0, 0, 0, 0.67);
+            height: 100vh;
+            backdrop-filter: blur(2px);
+        }
+
+        .brand-title {
+            font-family: Arial;
+            font-size: 60px;
+            color: red;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px white;
+        }
+
+        .section-title {
+            font-family: Arial;
+            font-size: 60px;
+            font-weight: bold;
+            margin-top: 40px;
+
+        }
+
+
+        .section-subtitle {
+            font-size: 20px;
+        }
+    </style>
+    <!-- Bootstrap library
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--react library-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function NetflixIndex() {
+            return (
+                <div className="shade">
+                    <NetflixHeader />
+                    <NetflixSection />
+                </div>
+            )
+        }
+
+        function NetflixHeader() {
+            return (
+                <header className="p-4 d-flex align-items-center justify-content-between">
+                    <div className="brand-title">NETFLIX</div>
+                    <div>
+                        <div className="d-flex ">
+                            <div className="input-group">
+                                <span className="bi input-group-text bi-translate"></span>
+                                <select className="form-select">
+                                    <option>Language</option>
+                                </select>
+                            </div>
+                            <button data-bs-target="#login" data-bs-toggle="modal" className="btn mx-3 btn-danger">Signin</button>
+                        </div>
+                    </div>
+                </header>
+            )
+        }
+
+        function NetflixSection() {
+            return (
+                <section className="text-white text-center">
+                    <div className="section-title">
+                        Unlimited movies, TV <br />shows and more
+                    </div>
+                    <div className="section-subtitle">
+                        Starts at ₹149. Cancel at any time.
+                    </div>
+                    <NetflixMain />
+                </section>
+            )
+        }
+
+        function NetflixMain() {
+            return (
+                <main className="mt-5">
+                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                    <div className="d-flex justify-content-center ">
+                        <div>
+                            <div className="input-group input-group-lg">
+                                <input className="form-control" type="email" placeholder="Enter your email Address" />
+                                <button className="btn mx-2 btn-danger">Get Started <span className="bi bi-chevron-right"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<section><NetflixIndex /></section>);
+    </script>
+</head>
+
+<body>
+    <noscript>PLzz enable javascript</noscript>
+    <div id="root">
+
+    </div>
+</body>
+
+</html>
